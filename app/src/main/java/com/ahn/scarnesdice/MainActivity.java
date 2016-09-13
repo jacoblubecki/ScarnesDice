@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    Button roll, hold, reset;
+    Button rollButton, holdButton, resetButton;
     TextView scoreText, compScoreText, storeText;
     ImageView dice;
     int score=0, compScore=0, random =0, points=0, x=0, compRandom = 0;
@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
         scoreText = (TextView) findViewById(R.id.score);
         compScoreText = (TextView) findViewById(R.id.comp_score);
-        roll = (Button) findViewById(R.id.roll);
-        hold = (Button) findViewById(R.id.hold);
-        reset = (Button) findViewById(R.id.reset);
+        rollButton = (Button) findViewById(R.id.roll);
+        holdButton = (Button) findViewById(R.id.hold);
+        resetButton = (Button) findViewById(R.id.reset);
         dice = (ImageView) findViewById(R.id.dice);
         storeText = (TextView) findViewById(R.id.points);
 
-        roll.setOnClickListener(new View.OnClickListener() {
+        rollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 random = (int) ((Math.random()*6)+1);
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        hold.setOnClickListener(new View.OnClickListener() {
+        holdButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 score += points;
@@ -78,12 +78,13 @@ public class MainActivity extends AppCompatActivity {
                 if(score>=100){
                     end.putExtra("winner", "You");
                     startActivity(end);
+                    finish();
                 }
 
             }
         });
 
-        reset.setOnClickListener(new View.OnClickListener() {
+        resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 score = 0;
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         while((random != 1) && (x<compRandom)){
             random = (int) ((Math.random()*6)+1);
             points += random;
-            roll.setClickable(false);
+            rollButton.setClickable(false);
             x++;
             if(random==1){
                 points=0;
@@ -115,8 +116,9 @@ public class MainActivity extends AppCompatActivity {
         if(compScore>=100){
             end.putExtra("winner", "Computer");
             startActivity(end);
+            finish();
         }
-        roll.setClickable(true);
+        rollButton.setClickable(true);
         compScore+=points;
         points=0;
         storeText.setText("Points in store: " + points);
