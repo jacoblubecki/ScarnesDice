@@ -14,12 +14,13 @@ public class MainActivity extends AppCompatActivity {
     TextView scoreText, compScoreText, storeText;
     ImageView dice;
     int score=0, compScore=0, random =0, points=0, x=0, compRandom = 0;
-    Intent end = new Intent(getApplicationContext(), EndGame.class);
+    Intent end;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        end = new Intent(getApplicationContext(), EndGame.class);
 
         scoreText = (TextView) findViewById(R.id.score);
         compScoreText = (TextView) findViewById(R.id.comp_score);
