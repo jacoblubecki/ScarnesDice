@@ -9,54 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ahn.scarnesdice.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/score"
-        android:textSize="20sp"
-        android:text="Your score: 0" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/comp_score"
-        android:textSize="20sp"
-        android:layout_toEndOf="@id/score"
-        android:text="Computer score: 0"
-        android:layout_marginStart="10dp"/>
-    <ImageView
-        android:contentDescription="@string/dice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/dice"
-        android:layout_below="@id/score"
-        android:layout_margin="10dp"
-        android:src="@drawable/dice1"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/points"
-        android:layout_below="@id/dice"
-        android:text="Points in store: 0"
-        android:textSize="25sp"
-        android:layout_margin="5dp"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/roll"
-        android:text="@string/roll"
-        android:layout_below="@id/points" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/hold"
-        android:text="@string/hold"
-        android:layout_below="@id/points"
-        android:layout_toEndOf="@id/roll" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/reset"
-        android:text="@string/reset"
-        android:layout_below="@id/points"
-        android:layout_toEndOf="@id/hold"/>
+    <!-- TV + Btn -->
+
+
 </RelativeLayout>
