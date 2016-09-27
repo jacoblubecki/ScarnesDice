@@ -6,23 +6,67 @@
     android:padding="@dimen/activity_horizontal_margin"
     tools:context="com.ahn.scarnesdice.MainActivity">
 
-    <!-- TV + Btn -->
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/player_1_score"
+      android:text="Player 1: "
+      android:textSize="15sp"
+      />
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Player 2: "
+      android:id="@+id/player_2_score"
+      android:textSize="15sp"
+      android:layout_marginLeft="15dp"
+      android:layout_toEndOf="@id/dice_image"
+      android:layout_alignBottom="@+id/player_1_score"
+      android:layout_alignParentTop="true" />
 
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="X"
-        android:textSize="100sp" />
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/dice_image"
+      android:layout_centerHorizontal="true"
+      android:src="@drawable/dice1"
+      />
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/current_score"
+      android:text="00"
+      android:textSize="45sp"
+      android:layout_below="@id/dice_image"
+      android:layout_centerHorizontal="true"
+      />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/roll_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/text"
+        android:layout_below="@id/current_score"
         android:layout_centerHorizontal="true"
-        android:text="Random"
+        android:text="Roll"
         android:onClick="roll"/>
+  <Button
+      android:id="@+id/hold_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/current_score"
+      android:text="Hold"
+      android:onClick="hold"
+      />
+  <Button
+      android:id="@+id/reset_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/current_score"
+      android:layout_alignParentRight="true"
+      android:text="Reset"
+      android:onClick="reset"/>
+
 </RelativeLayout>
